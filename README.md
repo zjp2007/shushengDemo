@@ -235,7 +235,7 @@ export default {
               contentHeight: 42,
             }
 ```
-##柱状/区域Card
+## 柱状/区域Card
 
 ```bash
 {
