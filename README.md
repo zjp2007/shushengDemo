@@ -238,10 +238,7 @@ export default {
 ## 柱状/区域Card
 
 ```bash
-{
-           //width: 6,
-            type: 'Card',
-            data: {
+             {
               inType: 2,    //3为柱状
               color: '',
               bordered: false,
@@ -280,16 +277,12 @@ export default {
                 },
               ],
               contentHeight: 42,
-            },
-          }
+            }
 ```
 ## 目标Card
 
 ```bash
-{
-            width: 6,
-            type: 'Card',
-            data: {
+            {
               bordered: false,
               inType: 4,
               color: '',
@@ -320,8 +313,7 @@ export default {
                 },
               ],
               contentHeight: 42,
-            },
-          }
+            }
 ```            
             
   
