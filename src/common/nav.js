@@ -47,7 +47,7 @@ export const getNavData = app => [{
         ],
         component: () => import('../routes/Dashboard/Workplace'),
       }),
-    },{
+    }, {
       name: '布局测试',
       path: 'layout',
       component: dynamic({
