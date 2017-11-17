@@ -2,15 +2,16 @@ export const getLayoutData = {
 
   layout: {
     type: 'Grid',
-    potionData: [ //数组中一个对象是一行
+    potionData: [
       {
         height: 200,
+
         innorObject: [
           {
-            width: 6,   //图标宽度   可以拓展为响应式布局[1, 12, 12, 8, 6] 对应
-            type: 'Card',  //展示方式     card   柱状图
-            data: { //图标数据
-              inType: 1,  //中心部位显示方式   1：指标展示   2 柱状图 。。。。。。
+            width: 6,
+            type: 'Card',
+            data: {
+              inType: 1,
               bordered: false,
               title: '总销售额',
               action: {
@@ -20,7 +21,7 @@ export const getLayoutData = {
                 type: 1,
                 value: '10000',
               },
-              content: [{   //中心位置显示内容
+              content: [{
                 type: '1',
                 value: '1223',
                 title: '日平均额',
@@ -31,7 +32,7 @@ export const getLayoutData = {
                 title: '日平均额',
                 flag: 'up',
               }],
-              footer: [  //底部显示内容
+              footer: [
                 {
                   type: 1,
                   value: 120,
@@ -43,7 +44,7 @@ export const getLayoutData = {
                   lable: '销售人数',
                 },
               ],
-              contentHeight: 42,//中心部位高低
+              contentHeight: 42,
             },
           },
           {
@@ -169,12 +170,12 @@ export const getLayoutData = {
               ],
               contentHeight: 42,
             },
-          }],
+          },
+        ],
       },
     ],
   },
 };
 export default {
   getLayoutData,
-}
-;
+};
