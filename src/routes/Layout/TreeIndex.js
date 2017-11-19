@@ -1,22 +1,38 @@
-English | [简体中文](./README.zh-CN.md)
+import React from 'react';
+import { Row, Col } from 'antd';
+import { GenNonDuplicateID } from '../../utils/utils';
 
-# ShuSheng DEMO
-## 使用
-```bash
-$ git clone https://github.com/zjp2007/shushengDemo.git
-$ cd dir
-$ npm install
-$ npm start         # 访问 http://localhost:8000
-```
+export default class TreeIndex extends React.Component {
+  generateMenu(menuObj) {
+    const vdom = [];
+    if (menuObj instanceof Array) {
+      const list = [];
+      for (const item of menuObj) {
+        list.push(this.generateMenu(item));
+      }
+      vdom.push(
+        <Row gutter={24} key={GenNonDuplicateID()}>
+          {list}
+        </Row>
+      );
+    } else if (menuObj) {
+      vdom.push(
+        <Col key={GenNonDuplicateID()} xs={menuObj.width} style={{ border: '1px solid #ccc', height: menuObj.height }}>
+          {menuObj && menuObj.type === 'content' &&
+          <h1>
+            我是要写内容的
+          </h1>
+          }
+          {this.generateMenu(menuObj.children)}
+        </Col>
+      );
+    }
+    return vdom;
+  }
 
-## 兼容性
-
-现代浏览器及 IE11。
-
-## Layout 布局json
-
-```bash
-{
+  render() {
+    const data = [
+      {
         width: 24,
         height: '',
         type: 'container',
@@ -134,126 +150,11 @@ $ npm start         # 访问 http://localhost:8000
         ],
       },
     ];
-```
 
-## 指标Card
-```bash
-{
-              inType: 1,  //组件内部展示方式    指标，柱状图， 区域图
-              bordered: false,
-              title: '总销售额',
-              action: {
-                title: '测试title',
-              },
-              total: {
-                type: 1,
-                value: '10000',
-              },
-              content: [{
-                type: '1',
-                value: '1223',
-                title: '日平均额',
-                flag: 'down',
-              }, {
-                type: '1',
-                value: '1223',
-                title: '日平均额',
-                flag: 'up',
-              }],
-              footer: [
-                {
-                  type: 1,
-                  value: 120,
-                  lable: '销售人数',
-                },
-                {
-                  type: 2,
-                  value: 120,
-                  lable: '销售人数',
-                },
-              ],
-              contentHeight: 42,
-            }
-```
-## 柱状/区域Card
-
-```bash
-             {
-              inType: 2,    //3为柱状
-              color: '',
-              bordered: false,
-              title: '总销售额',
-              action: {
-                title: '测试title',
-              },
-              total: {
-                type: 1,
-                value: '10000',
-              },
-              content: [{
-                x: '一月',
-                y: 200,
-              }, {
-                x: '二月',
-                y: 400,
-              }, {
-                x: '三月',
-                y: 300,
-              }, {
-                x: '四月',
-                y: 200,
-              },
-              ],
-              footer: [
-                {
-                  type: 1,
-                  value: 120,
-                  lable: '销售人数',
-                },
-                {
-                  type: 2,
-                  value: 120,
-                  lable: '销售人数',
-                },
-              ],
-              contentHeight: 42,
-            }
-```
-## 目标Card
-
-```bash
-            {
-              bordered: false,
-              inType: 4,
-              color: '',
-              title: '总销售额',
-              action: {
-                title: '测试title',
-              },
-              total: {
-                type: 1,
-                value: '10000',
-              },
-              content: {
-                percent: 78,
-                strokeWidth: 8,
-                target: 80,
-                color: '#13C2C2',
-              },
-              footer: [
-                {
-                  type: 1,
-                  value: 120,
-                  lable: '销售人数',
-                },
-                {
-                  type: 2,
-                  value: 120,
-                  lable: '销售人数',
-                },
-              ],
-              contentHeight: 42,
-            }
-```            
-            
-  
+    return (
+      <div>
+        {this.generateMenu(data)}
+      </div>
+    );
+  }
+}

@@ -55,7 +55,7 @@ export const getNavData = app => [{
         models: () => [
           import('../models/layout'),
         ],
-        component: () => import('../routes/Layout/LayoutIndex'),
+        component: () => import('../routes/Layout/TreeIndex'),
       }),
     }],
   }, {

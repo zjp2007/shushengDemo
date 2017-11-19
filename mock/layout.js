@@ -232,6 +232,54 @@ export const getLayoutData = {
     ],
   },
 };
+
+export const layData = {
+  type: 'grid',
+  parentLayout: [
+    {
+      width: '',
+      height: '',
+      type: '',
+      children: [
+        {
+          width: '',
+          height: '',
+          type: '',
+          children: [
+            {
+              width: '',
+              height: '',
+              type: '',
+              children: [
+                {
+                  width: '',
+                  height: '',
+                  type: '',
+                  data: '',
+                },
+                {
+                  width: '',
+                  height: '',
+                  type: '',
+                  data: '',
+                },
+              ],
+            },
+          ],
+        },
+        {
+          width: '',
+          height: '',
+          type: '',
+          children: [],
+        },
+      ],
+    },
+  ],
+};
+
+
 export default {
   getLayoutData,
+  layData,
 };
