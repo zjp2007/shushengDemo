@@ -1,13 +1,15 @@
 import dva from 'dva';
 import 'moment/locale/zh-cn';
+import createHistory from 'history/createBrowserHistory';
 import './polyfill';
 import './g2';
 // import { browserHistory } from 'dva/router';
+
 import './index.less';
 
 // 1. Initialize
 const app = dva({
-  // history: browserHistory,
+  history: createHistory(),
 });
 
 // 2. Plugins

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'dva';
-import { routerRedux, Link } from 'dva/router';
+import { Link } from 'dva/router';
 import { Form, Input, Tabs, Button, Icon, Checkbox, Row, Col, Alert } from 'antd';
 import styles from './Login.less';
 
@@ -15,12 +15,6 @@ export default class Login extends Component {
   state = {
     count: 0,
     type: 'account',
-  }
-
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.login.status === 'ok') {
-      this.props.dispatch(routerRedux.push('/'));
-    }
   }
 
   componentWillUnmount() {
@@ -43,7 +37,7 @@ export default class Login extends Component {
         clearInterval(this.interval);
       }
     }, 1000);
-  }
+  };
 
   handleSubmit = (e) => {
     e.preventDefault();

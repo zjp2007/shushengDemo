@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router, Route, Switch } from 'dva/router';
+import { Router, Route, Switch, Redirect } from 'dva/router';
 import { LocaleProvider, Spin } from 'antd';
 import zhCN from 'antd/lib/locale-provider/zh_CN';
 import dynamic from 'dva/dynamic';
@@ -55,7 +55,8 @@ function RouterConfig({ history, app }) {
       <Router history={history}>
         <Switch>
           <Route path="/user" render={props => <UserLayout {...props} {...passProps} />} />
-          <Route path="/" render={props => <BasicLayout {...props} {...passProps} />} />
+          <Route path="/dashboard" render={props => <BasicLayout {...props} {...passProps} />} />
+          <Redirect from="/" exact to="/user/login" render={props => <UserLayout {...props} {...passProps} />} />
         </Switch>
       </Router>
     </LocaleProvider>

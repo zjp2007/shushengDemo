@@ -23,6 +23,9 @@ export default {
         type: 'changeSubmitting',
         payload: false,
       });
+      if (response.status === 'ok') {
+        yield put(routerRedux.push('/dashboard/layout'));
+      }
     },
     *mobileSubmit(_, { call, put }) {
       yield put({

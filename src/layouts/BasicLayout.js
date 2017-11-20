@@ -3,12 +3,11 @@ import PropTypes from 'prop-types';
 import { Layout, Menu, Icon, Avatar, Dropdown, Tag, message, Spin } from 'antd';
 import DocumentTitle from 'react-document-title';
 import { connect } from 'dva';
-import { Link, Route, Redirect, Switch } from 'dva/router';
+import { Link, Route, Switch } from 'dva/router';
 import moment from 'moment';
 import groupBy from 'lodash/groupBy';
 import { ContainerQuery } from 'react-container-query';
 import classNames from 'classnames';
-import HeaderSearch from '../components/HeaderSearch';
 import NoticeIcon from '../components/NoticeIcon';
 import GlobalFooter from '../components/GlobalFooter';
 import NotFound from '../routes/Exception/404';
@@ -115,7 +114,7 @@ class BasicLayout extends React.PureComponent {
       return [];
     }
     return menusData.map((item) => {
-      if (!item.name) {
+      if (!item.name || item.path === 'user') {
         return null;
       }
       let itemPath;
@@ -290,17 +289,6 @@ class BasicLayout extends React.PureComponent {
               onClick={this.toggle}
             />
             <div className={styles.right}>
-              <HeaderSearch
-                className={`${styles.action} ${styles.search}`}
-                placeholder="站内搜索"
-                dataSource={['搜索提示一', '搜索提示二', '搜索提示三']}
-                onSearch={(value) => {
-                  console.log('input', value); // eslint-disable-line
-                }}
-                onPressEnter={(value) => {
-                  console.log('enter', value); // eslint-disable-line
-                }}
-              />
               <NoticeIcon
                 className={styles.action}
                 count={currentUser.notifyCount}
@@ -355,7 +343,6 @@ class BasicLayout extends React.PureComponent {
                   )
                 )
               }
-              <Redirect exact from="/" to="/dashboard/analysis" />
               <Route component={NotFound} />
             </Switch>
             <GlobalFooter
