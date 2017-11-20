@@ -72,7 +72,6 @@ export default class Analysis extends Component {
     this.setState({
       rangePickerValue: getTimeDistance(type),
     });
-
     this.props.dispatch({
       type: 'chart/fetchSalesData',
     });

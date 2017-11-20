@@ -16,24 +16,20 @@ $ npm start         # 访问 http://localhost:8000
 ## Layout 布局json
 
 ```bash
-{
+    [{
         width: 24,
-        height: '',
         type: 'container',
         children: [
           {
             width: 18,
-            height: '',
             type: 'container',
             children: [
               {
                 width: 24,
-                height: '',
                 type: 'container',
                 children: [
                   {
                     width: 24,
-                    height: 200,
                     type: 'container',
                     children: [
                       {
@@ -52,7 +48,6 @@ $ npm start         # 访问 http://localhost:8000
                   },
                   {
                     width: 24,
-                    height: 600,
                     type: 'container',
                     children: [
                       {
@@ -63,7 +58,6 @@ $ npm start         # 访问 http://localhost:8000
                       },
                       {
                         width: 16,
-                        height: 600,
                         type: 'container',
                         children: [
                           {
@@ -74,7 +68,6 @@ $ npm start         # 访问 http://localhost:8000
                           },
                           {
                             width: 16,
-                            height: 600,
                             type: 'container',
                             children: [
                               {
@@ -85,7 +78,6 @@ $ npm start         # 访问 http://localhost:8000
                               },
                               {
                                 width: 24,
-                                height: 400,
                                 type: 'container',
                                 children: [
                                   {
@@ -114,7 +106,6 @@ $ npm start         # 访问 http://localhost:8000
           },
           {
             width: 6,
-            height: 800,
             type: 'container',
             children: [
               {
@@ -125,7 +116,7 @@ $ npm start         # 访问 http://localhost:8000
               },
               {
                 width: 24,
-                height: 500,
+                height: 600,
                 type: 'content',
                 data: '',
               },

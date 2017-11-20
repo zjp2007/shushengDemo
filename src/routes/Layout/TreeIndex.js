@@ -17,7 +17,7 @@ export default class TreeIndex extends React.Component {
       );
     } else if (menuObj) {
       vdom.push(
-        <Col key={GenNonDuplicateID()} xs={menuObj.width} style={{ border: '1px solid #ccc', height: menuObj.height }}>
+        <Col key={GenNonDuplicateID()} xs={menuObj.width} style={{ border: '1px solid #ccc', height: menuObj.type === 'content' ? menuObj.height : 'auto' }}>
           {menuObj && menuObj.type === 'content' &&
           <h1>
             我是要写内容的
@@ -34,22 +34,18 @@ export default class TreeIndex extends React.Component {
     const data = [
       {
         width: 24,
-        height: '',
         type: 'container',
         children: [
           {
             width: 18,
-            height: '',
             type: 'container',
             children: [
               {
                 width: 24,
-                height: '',
                 type: 'container',
                 children: [
                   {
                     width: 24,
-                    height: 200,
                     type: 'container',
                     children: [
                       {
@@ -68,7 +64,6 @@ export default class TreeIndex extends React.Component {
                   },
                   {
                     width: 24,
-                    height: 600,
                     type: 'container',
                     children: [
                       {
@@ -79,7 +74,6 @@ export default class TreeIndex extends React.Component {
                       },
                       {
                         width: 16,
-                        height: 600,
                         type: 'container',
                         children: [
                           {
@@ -90,7 +84,6 @@ export default class TreeIndex extends React.Component {
                           },
                           {
                             width: 16,
-                            height: 600,
                             type: 'container',
                             children: [
                               {
@@ -101,7 +94,6 @@ export default class TreeIndex extends React.Component {
                               },
                               {
                                 width: 24,
-                                height: 400,
                                 type: 'container',
                                 children: [
                                   {
@@ -130,7 +122,6 @@ export default class TreeIndex extends React.Component {
           },
           {
             width: 6,
-            height: 800,
             type: 'container',
             children: [
               {
@@ -141,7 +132,7 @@ export default class TreeIndex extends React.Component {
               },
               {
                 width: 24,
-                height: 500,
+                height: 600,
                 type: 'content',
                 data: '',
               },
