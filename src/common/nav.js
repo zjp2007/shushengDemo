@@ -69,6 +69,7 @@ export const getNavData = app => [{
   children: [{
     name: '帐户',
     icon: 'user',
+    isHide: true,
     path: 'user',
     children: [{
       name: '登录',
