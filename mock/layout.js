@@ -173,9 +173,113 @@ export const getLayoutData = {
           },
         ],
       },
+      {
+        height: 400,
+        innorObject: [
+          {
+            width: 12,
+            type: 'Bar',
+            data: {
+              bordered: false,
+              inType: 1,
+              color: '',
+              title: '总销售额',
+              content: [
+                {
+                  x: '1月',
+                  y: '123',
+                },
+                {
+                  x: '2月',
+                  y: '245',
+                },
+                {
+                  x: '3月',
+                  y: '321',
+                },
+                {
+                  x: '4月',
+                  y: '134',
+                },
+                {
+                  x: '5月',
+                  y: '245',
+                },
+                {
+                  x: '6月',
+                  y: '321',
+                },
+                {
+                  x: '7月',
+                  y: '176',
+                },
+                {
+                  x: '8月',
+                  y: '245',
+                },
+                {
+                  x: '9月',
+                  y: '321',
+                },
+              ],
+            },
+          },
+          {
+            width: 12,
+          },
+        ],
+      },
     ],
   },
 };
+
+export const layData = {
+  type: 'grid',
+  parentLayout: [
+    {
+      width: '',
+      height: '',
+      type: '',
+      children: [
+        {
+          width: '',
+          height: '',
+          type: '',
+          children: [
+            {
+              width: '',
+              height: '',
+              type: '',
+              children: [
+                {
+                  width: '',
+                  height: '',
+                  type: '',
+                  data: '',
+                },
+                {
+                  width: '',
+                  height: '',
+                  type: '',
+                  data: '',
+                },
+              ],
+            },
+          ],
+        },
+        {
+          width: '',
+          height: '',
+          type: '',
+          children: [],
+        },
+      ],
+    },
+  ],
+};
+
+
 export default {
   getLayoutData,
+  layData,
 };
