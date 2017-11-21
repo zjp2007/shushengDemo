@@ -16,38 +16,6 @@ export const getNavData = app => [{
     icon: 'dashboard',
     path: 'dashboard',
     children: [{
-      name: '分析页',
-      path: 'analysis',
-      component: dynamic({
-        app,
-        models: () => [
-          import('../models/chart'),
-        ],
-        component: () => import('../routes/Dashboard/Analysis'),
-      }),
-    }, {
-      name: '监控页',
-      path: 'monitor',
-      component: dynamic({
-        app,
-        models: () => [
-          import('../models/monitor'),
-        ],
-        component: () => import('../routes/Dashboard/Monitor'),
-      }),
-    }, {
-      name: '工作台',
-      path: 'workplace',
-      component: dynamic({
-        app,
-        models: () => [
-          import('../models/project'),
-          import('../models/activities'),
-          import('../models/chart'),
-        ],
-        component: () => import('../routes/Dashboard/Workplace'),
-      }),
-    }, {
       name: '布局测试',
       path: 'layout',
       component: dynamic({
